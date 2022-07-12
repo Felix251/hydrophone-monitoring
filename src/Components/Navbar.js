@@ -3,6 +3,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import { FaUser } from 'react-icons/fa';
 import { useStateContext } from '../Contexts/ContextProvider';
 import navButton from './navButton';
+import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 
 export default function Navbar() {
@@ -17,8 +18,13 @@ export default function Navbar() {
               </TooltipComponent>
   );*/
   return (
-    <div className='flex justify-between p-2 md:mx-6 relative'>
-        <navButton title='Menu' func={(prevActiveMenu) => {setActiveMenu(!prevActiveMenu)}} color='blue' icon={<AiOutlineMenu/>}/>
+    <div className='flex justify-between p-2 md:mx-6 relative ml-10'>
+       <TooltipComponent content='Menu' position="RightCenter">
+                <button type='button' onClick={() => {setActiveMenu(!activeMenu)}} style={{color : 'blue'}} className='relative text-xl rounded-full p-3 hover:bg-light-gray'>
+                  <span className='absolute inline-flex rounded-full h-2 w-2 right-2 top-2'/>
+                  <AiOutlineMenu />
+                </button>    
+              </TooltipComponent>
     </div>
   )
 }

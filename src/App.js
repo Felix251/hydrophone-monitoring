@@ -16,7 +16,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className='h-screen w-screen'>
-        <div className="flex relative h-full overflow-hidden">
+        <div className="flex relative h-full overflow-x-hidden">
           <div className='fixed right-4 bottom-4 z-1000 dark:bg-main-dark-bg'>
               <TooltipComponent content="Settings" position='Top'>
                 <button className='p-3 text-white hover:bg-light-gray text-2xl hover:drop-shadow-xl' style={{ background: 'blue', borderRadius: '50%' }}>
@@ -36,8 +36,8 @@ function App() {
           )
           }
           <div 
-            className={`dark:bg-main-bg h-10 overflow-hidden bg-main-bg w-full min-h-screen ${activeMenu ? 'md:ml-72' : 'flex-2'}`}>
-              <div className='fixed md:static h-10 bg-main-bg dark:bg-main-dark-bg navbar w-full'>
+            className={`dark:bg-main-bg h-10 bg-main-bg w-full min-h-screen ${activeMenu ? 'md:ml-72' : 'flex-2'}`}>
+              <div className='mb-5 fixed md:static h-10 bg-main-bg dark:bg-main-dark-bg navbar w-full'>
                   <Navbar />
               </div>
             <div className='w-full h-full overflow-hidden'>
